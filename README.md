@@ -36,39 +36,59 @@ For comprehensive documentation, visit the
 Common make targets for developing the Academy theme:
 
 - **Install necessary tools and modules**
-  ```bash
+```bash
   make setup
-  ```
+```
 
-- **Start the local Hugo development server**
-  ```bash
+- **Start the local Hugo development server with live reload**
+```bash
   make site
-  ```
+```
 
-- **Build the site for production**
-  ```bash
+- **Serve the site once with the file watcher off (no live reload)**
+```bash
+  make serve
+```
+
+- **Build the site locally with draft and future content enabled**
+```bash
   make build
-  ```
+```
 
-- **Build the site for local consumption with custom base URL**
-  ```bash
+- **Build the site for a deploy preview (honors `DEPLOY_PRIME_URL`)**
+```bash
   make build-preview
-  ```
+```
 
-- **Clean the Hugo cache and restart local setup**
-  ```bash
+- **Build the site for production (pass `BASE_URL=...` to set the base URL)**
+```bash
+  make build-production
+```
+
+- **Empty the build cache, reinstall dependencies, and run the site locally**
+```bash
   make clean
-  ```
+```
+
+- **Check Markdown for linting issues**
+```bash
+  make lint
+```
 
 - **Fix Markdown linting issues**
-  ```bash
+```bash
   make lint-fix
-  ```
+```
+
+- **Check internal links in the built site**
+```bash
+  make check-links
+```
 
 - **Verify Go is installed locally**
-  ```bash
+```bash
   make check-go
-  ```
+```
 
 ## Content Structure
 
